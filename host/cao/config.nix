@@ -3,7 +3,6 @@
   # Host name
   networking.hostName = "atelier-cao-nixos";
 
-
   # add gui
   services.xserver = {
     # Enable the X11 windowing system.
@@ -24,6 +23,12 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  users.users.atelier = {
+    # disable password
+    hashedPassword = "";
+    isNormalUser = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
